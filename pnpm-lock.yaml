@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@chat-adapter/state-memory':
+        specifier: ^4.26.0
+        version: 4.26.0
       '@chat-adapter/state-redis':
         specifier: ^4.26.0
         version: 4.26.0
@@ -252,6 +255,9 @@ packages:
 
   '@chat-adapter/shared@4.26.0':
     resolution: {integrity: sha512-YD0MGktFXrArUqTBsyPfL5vkdD1WBS58PAWO0oVrMQAMmPxpAXfWGjBtZCkf3y8R8Svb0uVuVXiMZSForaEnMQ==}
+
+  '@chat-adapter/state-memory@4.26.0':
+    resolution: {integrity: sha512-FsfyM/A9Bf1yFc1FWmOsK+a4YVwm5FogX25hZxFG6cEvyFb6Cd924SsbtvF06yItY/7J2UFetCsMmBPkdPKshQ==}
 
   '@chat-adapter/state-redis@4.26.0':
     resolution: {integrity: sha512-NSX2E6wkDlg0AMfKFx4LPoV6cBHolL08Ht3cT+S01jss24t9GzlDw/BUsrWOeoTElwEhxZcQw5bUkStUAA7JMg==}
@@ -4563,6 +4569,12 @@ snapshots:
     optional: true
 
   '@chat-adapter/shared@4.26.0':
+    dependencies:
+      chat: 4.26.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@chat-adapter/state-memory@4.26.0':
     dependencies:
       chat: 4.26.0
     transitivePeerDependencies:
