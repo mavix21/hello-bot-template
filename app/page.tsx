@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { pingTelegramWebhook } from "./actions";
 
 export default function Home() {
   return (
@@ -58,6 +59,14 @@ export default function Home() {
           >
             Documentation
           </a>
+          <form action={pingTelegramWebhook}>
+            <button
+              type="submit"
+              className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-39.5"
+            >
+              Ping bot
+            </button>
+          </form>
         </div>
       </main>
     </div>
