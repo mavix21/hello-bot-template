@@ -1,0 +1,23 @@
+{
+  "Bot message history transcript": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "botmsghist",
+    "description": "Collects thread messages and posts a formatted transcript",
+    "body": [
+      "const history: Message<unknown>[] = [];",
+      "for await (const msg of thread.messages) {",
+      "  history.push(msg);",
+      "}",
+      "const transcript = history",
+      "  .map((msg) => {",
+      "    const name = msg.author.fullName ?? msg.author.userName ?? \"Anónimo\";",
+      "    return `\\\\[\\${msg.author.isBot ? \"🤖\" : \"👤\"} \\${name}\\\\]: \\${msg.text}`;",
+      "  })",
+      "  .join(\"\\n\\n\");",
+      "",
+      "await thread.post({",
+      "  markdown: `📜 *Historial de mensajes*\\n\\n\\${transcript}`,",
+      "});",
+    ],
+  },
+}
