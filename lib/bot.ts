@@ -5,7 +5,9 @@ import { createMemoryState } from "@chat-adapter/state-memory";
 const bot = new Chat({
   userName: "hello_bot",
   adapters: {
-    telegram: createTelegramAdapter(),
+    telegram: createTelegramAdapter({
+      mode: "auto", // default
+    }),
   },
   state: createMemoryState(),
 });
@@ -13,5 +15,7 @@ const bot = new Chat({
 bot.onNewMention(async (thread) => {
   await thread.post("Hello World!");
 });
+
+void bot.initialize();
 
 export { bot };
